@@ -25,7 +25,7 @@ def SendPings(host, min, max):
     for item in range(min, max+1):
         full_ip = IP + str(item)#add the last bit so 192.168.1. becomes 192.168.1.2
         response = os.system("ping -n 1 " + full_ip)#ping the ip in a loop
-        if response == 1:
+        if response == 0:
             print(item, 'is up!')
         else:
             print(item, 'is down!')
